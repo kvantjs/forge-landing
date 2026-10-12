@@ -6,11 +6,10 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import {
-  IconArrowDownRight, IconArrowUpRight, IconBrandGithub, IconBrandReact,
+  IconArrowUpRight, IconBrandGithub, IconBrandReact,
   IconCheck, IconChevronDown, IconCode, IconCommand, IconExternalLink,
   IconFileCode, IconFolder, IconLayersSubtract, IconLink, IconMessage2,
   IconPlayerPlay, IconSparkles, IconTerminal2, IconWand, IconWorldCode,
-  IconX,
 } from "@tabler/icons-react";
 import { appConfig } from "@/config/app.config";
 
