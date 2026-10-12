@@ -1,0 +1,8 @@
+@import "./landing-v2.css";
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: #090909; }
+body { margin: 0; background: #090909; color: #f4f4f0; font-family: var(--font-geist-sans), sans-serif; }
+button, input, textarea, select { font: inherit; }
+::selection { background: #f4f4f0; color: #090909; }
