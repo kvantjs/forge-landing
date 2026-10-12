@@ -1,8 +1,11 @@
 @import "./landing-v2.css";
 
+@font-face { font-family: "Geist"; src: url("/fonts/GeistVF.woff") format("woff"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("/fonts/GeistMonoVF.woff") format("woff"); font-weight: 100 900; font-style: normal; font-display: swap; }
+
 :root { color-scheme: dark; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: #090909; }
-body { margin: 0; background: #090909; color: #f4f4f0; font-family: var(--font-geist-sans), sans-serif; }
+body { margin: 0; background: #090909; color: #f4f4f0; font-family: "Geist", sans-serif; }
 button, input, textarea, select { font: inherit; }
 ::selection { background: #f4f4f0; color: #090909; }

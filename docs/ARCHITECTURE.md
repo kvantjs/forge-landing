@@ -1,12 +1,12 @@
 # Arquitetura e deploy
 
-Este repositório contém somente a apresentação pública: metadata, copy, composição visual e formulário de entrada. O formulário usa `NEXT_PUBLIC_STUDIO_URL` para abrir o workspace em `/generation`.
+Este repositório contém somente a apresentação pública: metadata, copy, composição visual e formulário de entrada. O formulário usa `VITE_STUDIO_URL` para abrir o workspace em `/generation`.
 
 ## Deploy
 
-1. Configure `NEXT_PUBLIC_STUDIO_URL` com a origem pública do `forge-studio`.
+1. Configure `VITE_STUDIO_URL` com a origem pública do `forge-studio`.
 2. Rode `npm run lint` e `npm run build`.
-3. Publique a aplicação em um host Next.js separado.
+3. Publique o conteúdo de `dist/` em um host estático ou use `npm run start` para o preview Vite.
 4. Nunca copie `.env` do Studio para este repositório.
 
 ## Limites

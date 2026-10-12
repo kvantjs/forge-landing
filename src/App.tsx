@@ -1,8 +1,4 @@
-"use client";
-
 import { useState, type FormEvent } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import {
@@ -11,7 +7,7 @@ import {
   IconFileCode, IconFolder, IconLayersSubtract, IconLink, IconMessage2,
   IconPlayerPlay, IconSparkles, IconTerminal2, IconWand, IconWorldCode,
 } from "@tabler/icons-react";
-import { appConfig } from "@/config/app.config";
+import { appConfig } from "../config/app.config";
 
 type BuildMode = "prompt" | "remix";
 const suggestions = ["Um dashboard de analytics para produto SaaS", "Landing page premium para uma marca de arquitetura", "Aplicativo de tarefas com kanban e calendário"];
@@ -36,7 +32,6 @@ function ForgeMark() { return <span className="forge-v2-mark" aria-hidden="true"
 function looksLikeUrl(value: string) { return /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(?::\d+)?(?:[/?#][^\s]*)?$/i.test(value.trim()); }
 
 export default function HomePage() {
-  const router = useRouter();
   const [mode, setMode] = useState<BuildMode>("prompt");
   const [request, setRequest] = useState("");
   const [context, setContext] = useState("");
@@ -56,13 +51,14 @@ export default function HomePage() {
     if (remix) sessionStorage.setItem("selectedStyle", "4"); else sessionStorage.removeItem("selectedStyle");
     sessionStorage.setItem("autoStart", "true"); sessionStorage.setItem("directPrompt", remix ? "false" : "true");
     if (context.trim()) sessionStorage.setItem("additionalInstructions", context.trim()); else sessionStorage.removeItem("additionalInstructions");
-    router.push(`${process.env.NEXT_PUBLIC_STUDIO_URL || "http://localhost:3000"}/generation`);
+    const studioUrl = import.meta.env.VITE_STUDIO_URL || "http://localhost:3000";
+    window.location.assign(`${studioUrl}/generation`);
   };
 
   return <main className="forge-v2 min-h-screen overflow-hidden">
     <div className="forge-v2-noise" aria-hidden="true" />
     <header className="forge-v2-nav">
-      <Link href="/" className="forge-v2-brand" aria-label="FORGE Studio — início"><ForgeMark /><span>FORGE</span><em>STUDIO</em></Link>
+      <a href="/" className="forge-v2-brand" aria-label="FORGE Studio — início"><ForgeMark /><span>FORGE</span><em>STUDIO</em></a>
       <nav className="forge-v2-navlinks" aria-label="Navegação principal"><a href="#produto">Produto</a><a href="#processo">Processo</a><a href="#capacidades">Capacidades</a><a href="#faq">FAQ</a><a href="https://github.com/kvantjs/forge-studio" target="_blank" rel="noreferrer"><IconBrandGithub size={16} /> GitHub <IconExternalLink size={12} /></a></nav>
       <a className="forge-v2-nav-cta" href="#composer">Começar <IconArrowUpRight size={15} /></a>
     </header>
@@ -120,6 +116,6 @@ export default function HomePage() {
 
     <section className="forge-v2-final-cta"><span className="forge-v2-label">03 / 03</span><h2>Uma boa ideia merece<br /><span>um primeiro sim.</span></h2><p>Descreva o que você quer criar. O resto pode começar a tomar forma.</p><a className="forge-v2-light-button" href="#composer">Abrir a FORGE <IconArrowUpRight size={16} /></a></section>
 
-    <footer className="forge-v2-footer"><Link href="/" className="forge-v2-brand"><ForgeMark /><span>FORGE</span><em>STUDIO</em></Link><div><span>OPEN-SOURCE BUILDER</span><a href="https://github.com/kvantjs/forge-studio" target="_blank" rel="noreferrer">Ver no GitHub <IconArrowUpRight size={14} /></a></div></footer>
+    <footer className="forge-v2-footer"><a href="/" className="forge-v2-brand"><ForgeMark /><span>FORGE</span><em>STUDIO</em></a><div><span>OPEN-SOURCE BUILDER</span><a href="https://github.com/kvantjs/forge-studio" target="_blank" rel="noreferrer">Ver no GitHub <IconArrowUpRight size={14} /></a></div></footer>
   </main>;
 }
