@@ -1,0 +1,8 @@
+{
+  "name": "FORGE Studio",
+  "description": "Crie aplicações React a partir de um briefing ou de uma referência visual com a FORGE Studio.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ],
+  "permissions": []
+}

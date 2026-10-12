@@ -12,7 +12,8 @@
   .forge-v2-navlinks a,.forge-v2-nav-cta { display:inline-flex; align-items:center; gap:6px; color:#929292; font-size:12px; text-decoration:none; transition:color .2s ease; }
   .forge-v2-navlinks a:hover,.forge-v2-nav-cta:hover { color:#fff; }
   .forge-v2-nav-cta { padding:9px 12px; border:1px solid #393939; border-radius:5px; color:#e9e9e9; }
-  .forge-v2-hero { display:grid; grid-template-columns:minmax(0,1.18fr) minmax(350px,.82fr); align-items:center; gap:86px; padding-block:118px 92px; }
+  .forge-v2-hero { position:relative; width:100%; margin:0; display:grid; grid-template-columns:minmax(0,1.18fr) minmax(350px,.82fr); align-items:center; gap:86px; padding:150px max(36px, calc((100% - 1220px) / 2)); background-image:url('https://imgdb.io/i/ioOZxik.avif'); background-size:cover; background-position:center; background-repeat:no-repeat; border-radius:0; overflow:hidden; }
+  .forge-v2-hero > * { position:relative; z-index:1; }
   .forge-v2-kicker,.forge-v2-label,.forge-v2-section-meta,.forge-v2-card-top { color:#868686; font:10px var(--font-geist-mono),monospace; letter-spacing:.12em; }
   .forge-v2-kicker { display:flex; align-items:center; gap:9px; }
   .forge-v2-pulse,.forge-v2-live i { width:6px; height:6px; border-radius:50%; background:#e7e7e7; box-shadow:0 0 14px rgba(255,255,255,.65); }
